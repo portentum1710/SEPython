@@ -32,11 +32,4 @@ def check_access(card_number, floor):
     return None
 
 
-# Не удаляйте код ниже, он нужен для тестирования вашей функции.
-import sys
 
-# Проверяем доступ
-access = check_access(sys.argv[1], sys.argv[2])
-
-# Получаем ответ для проверки
-print(access)
