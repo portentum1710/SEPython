@@ -2,7 +2,7 @@ import sys
 
 # Список городов
 cities = [
-    # Клд  Мск   СПб,  Каз   Врж,  Тверь
+    #   Клд  Мск   СПб,  Каз   Врж,  Тверь
     [0, 1337, 1103, 2192, 1855, 1255],  # Калининград
     [1337, 0, 712, 825, 522, 192],  # Москва
     [1103, 712, 0, 1526, 1337, 531],  # Санкт-Петербург
@@ -11,24 +11,29 @@ cities = [
     [1255, 192, 531, 1006, 815, 0]  # Тверь
 ]
 
-
-# Напишите код функции тут.
 def calc_distance(path):
     distance = 0
-    line = 0
-    for idx in path:
-        distance += cities[line][idx]
-    line = idx
+    for idx, idx_city in enumerate(path):
+        next_idx = idx + 1
+        if next_idx > len(path) - 1:
+            break
+        distance += cities[idx_city][path[next_idx]]
     return distance
 
-
-
-# Получаем путь в виде списка: [0, 1, 2]
 path = list(map(int, sys.argv[1:]))
 
 # Выводим результат
 print(calc_distance(path))
+#---------------------------------------------------------
+def calc_distance(path):
+    """
+    Вычисляем расстояние между городами.
+    """
+    distance = 0
+    prev_city = path[0]
+    for city in path[1:]:
+        distance += cities[prev_city][city]
+        prev_city = city
 
-# (Казань - Калининград - Тверь
-# print(calc_distance([3, 0, 5]))
-# 3447
+    return distance
+
