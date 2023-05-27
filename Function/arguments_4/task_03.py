@@ -8,14 +8,15 @@ def sm(*num: int):
     return result
 print(sm(2, 59, 3, 90))
 
-def compare_str(s1, s2, reg=False, trim=True):
-    if reg:
-        s1 = s1.lower()
-        s2 = s2.lower()
-    if trim:
-        s1 = s1.strip()
-        s2 = s2.strip()
+#---------------------------------------
+def sm(*args):
+    i = 0
+    # Перебираем все аргументы.
+    for arg in args:
+        i += arg
 
-    return s1 == s2
+    return i
 
-print(compare_str("Python", "PYTHON", True, False))
+# Вариант 2: хак с помощью sum.
+def sm(*args):
+    return sum(args)
