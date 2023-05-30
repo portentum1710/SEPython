@@ -7,3 +7,4 @@ print("Кинетическая энергия:", ek(m, 6))
 
 from physics import ep
 print("Потенциальная энергия:", ep(m, 2))
+print(__name__)
