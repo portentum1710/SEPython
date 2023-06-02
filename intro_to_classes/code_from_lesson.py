@@ -3,6 +3,7 @@ class Auto:
         self.number = ""
         print("Создание обьекта")
 
+
 auto1 = Auto()
 auto2 = Auto()
 
