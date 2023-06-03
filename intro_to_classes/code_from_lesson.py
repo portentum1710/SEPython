@@ -19,11 +19,18 @@ class Cat:
         print(f"{self.name} says: Meow")
 
 
+class Point:
+    color = "red"
+    circle = 2
+
+
 if __name__ == '__main__':
-    tom = Cat("Tom", 2)
-    angela = Cat("Angela", 1)
-    print(tom)
-    print(angela)
-    tom.meow()  # стр.1 неявно передоёт self
+    # tom = Cat("Tom", 2)
+    # angela = Cat("Angela", 1)
+    # print(tom)
+    # print(angela)
+    # tom.meow()  # стр.1 неявно передоёт self
     #  Cat.meow(tom) cтп.2 !!! Стр.1 и стр.2 Аналогичны!!!!
-    angela.meow()
+    #  angela.meow()
+    print(Point.__dict__)
+    isinstance()
