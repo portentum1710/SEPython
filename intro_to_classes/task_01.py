@@ -1,26 +1,16 @@
-# Объект - сущность, объеденяющая данные и методы для работы с ними
-# Чертеж = класс, объект это дом.
-# Класс это НОВЫЙ ТИП данных, объект - его КОНКРЕТНЫЙ представитель
-# У любого объекта есть id(адрес в памяти), значение и тип
-# Первая потребность для классов - когда не хватает встроенных типов, разное состояние
-# Метод это функция, которая принадлежит классу
-# Dunder метод(Магические методы)
+
+class Auto:
+    def __init__(self):
+        self.number = ""
+        print("Создание обьекта")
 
 
-class Cat:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+auto1 = Auto()
+auto2 = Auto()
 
-    def meow(self):
-        print(f"{self.name} says: Meow")
-
-
-if __name__ == '__main__':
-    tom = Cat("Tom", 2)
-    angela = Cat("Angela", 1)
-    print(tom)
-    print(angela)
-    tom.meow()  # стр.1 неявно передоёт self
-    #  Cat.meow(tom) cтп.2 !!! Стр.1 и стр.2 Аналогичны!!!!
-    angela.meow()
+print("a1:", auto1.number)
+print("a2:", auto2.number)
+auto1.number = "a111aa"
+auto2.number = "a222aa"
+print("a1:", auto1.number)
+print("a2:", auto2.number)

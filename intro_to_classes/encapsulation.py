@@ -6,13 +6,20 @@ class Person:
     def __init__(self, first_name, last_name, age):
         self._first_name = first_name
         self._last_name = last_name
-        self._age = age
+        self.__age = age
+        self.__one__ = 1
+
+    def set_age(self, age):
+        if age < 1 or age > 120:
+            raise ValueError("Age must be range 1-120")
+        self.__age = age
 
     def describe(self):
-        print(f"I`m {self._first_name} {self._last_name}.I am {self._age} years old!")
+        print(f"I`m {self._first_name} {self._last_name}.I am {self.__age} years old!")
 
 
 if __name__ == '__main__':
     ivan = Person("Ivan", "Ivanov", 24)
-    ivan._age = 1000
     ivan.describe()
+    print(ivan.__age)
+    print(dir(ivan))
