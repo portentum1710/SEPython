@@ -18,5 +18,7 @@ class Auto:
 
 if __name__ == '__main__':
     auto1 = Auto()
+
     auto1.number = "a111aa"
     print("a1:", auto1.number)
+
