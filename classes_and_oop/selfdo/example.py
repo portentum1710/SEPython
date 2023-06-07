@@ -25,6 +25,35 @@ class Human:
         print(f"Default Name: {Human.default_name}")
         print(f"Default Age: {Human.default_age}")
 
+    def earn_money(self, amount):
+        self.__money += amount
+        print(f"Earned {amount} money!Current value: {self.__money}")
+
+    def buy_house(self, house, discount):
+        price = house.final_price(discount)
+        if self.__money >= price:
+            self.__make_deal(house, price)
+        else:
+            print("Not enough money!")
+
+    def __make_deal(self, house, price):
+        self.__money -= price
+        self.__house = house
+
+
+class House:
+    def __init__(self, area, price):
+        self.area = area
+        self.price = price
+
+    def final_price(self, discount):
+        final_price = self.price * (100 - discount) / 100
+        print(f"Final price: {final_price}")
+        return final_price
+
+
+# Приватный метод:
+
 
 if __name__ == '__main__':
     print(Human.default_name)
@@ -34,4 +63,12 @@ if __name__ == '__main__':
     fedor.info()
 
     Human.default_info()
+
+    fedor.earn_money(10_000)
+
+    fedor.info()
+
+    house = House(100, 15000)
+
+    fedor.buy_house(house, 3)
     a = 0
