@@ -52,35 +52,23 @@ class House:
         return final_price
 
 
-class SmallHouse(House):
-
-    default_area = 40
-
-    def __init__(self, price):
-        super().__init__(SmallHouse.default_area, price)
-
 # Приватный метод:
 
 
 if __name__ == '__main__':
+    print(Human.default_name)
+
+    fedor = Human("Fedor", 32)
+
+    fedor.info()
 
     Human.default_info()
 
-    alexander = Human("Sasha", 27)
+    fedor.earn_money(10_000)
 
+    fedor.info()
+
+    house = House(100, 15000)
+
+    fedor.buy_house(house, 3)
     a = 0
-
-    alexander.info()
-
-    small_house = SmallHouse(8500)
-
-    alexander.buy_house(small_house, 5)
-
-    alexander.earn_money(5000)
-
-    alexander.earn_money(20_000)
-
-    alexander.buy_house(small_house, 5)
-
-    alexander.info()
-
